@@ -1,7 +1,7 @@
 {
   "project": "HelpUS Health",
   "domain": "health.helpusbr.com",
-  "stage": "Projeto Saude v0.3 gesture report generated",
+  "stage": "Projeto Saude v0.4 real-camera gesture validation requires threshold tuning",
   "calibration": {
     "session_id": "cal_20260518_160327_d474e5",
     "samples": 290,
@@ -13,23 +13,38 @@
     "raw_media_files": 0
   },
   "next_actions": [
-    "Run real-camera gesture validation with user present",
-    "Validate head_left/head_right/mouth_open/blink_long on webcam",
-    "Generate aggregate-only report and compare with simulated baseline",
-    "Plan Railway API only when recurring consent-safe metrics exist"
+    "Tune yaw, mouth, and blink thresholds against the latest real-camera feature ranges",
+    "Improve on-screen prompting so the user knows when the response window is active",
+    "Run a new four-gesture real-camera validation after threshold tuning",
+    "Keep the dashboard aggregate-only until the metric loop is stable"
   ],
   "privacy": "No raw video, photos, frames or images are saved. Dashboard uses aggregate JSON and CSV metrics only.",
-  "updated_at_utc": "2026-05-18T18:02:46Z",
+  "updated_at_utc": "2026-05-18T18:32:09Z",
   "gesture_report": {
-    "mode": "simulated_no_camera",
-    "session_id": "s_20260518_175812_3322c3",
-    "session_path": "D:/dev/saude/camera_calibrator/data/sessions/saude1_demo_gesture_session.jsonl/s_20260518_175812_3322c3.jsonl",
-    "report_dir": "D:/dev/saude/camera_calibrator/reports/saude1_demo_gesture_session_20260518_175812",
-    "total_trials": 12,
-    "overall_accuracy": 1.0,
-    "level1_accuracy": 1.0,
-    "mean_latency_ms": 710.0,
+    "mode": "real_camera",
+    "status": "completed_needs_tuning",
+    "session_id": "s_20260518_182531_58534c",
+    "session_path": "D:/dev/saude/camera_calibrator/data/sessions/saude1_real_gesture_session_calibrated/s_20260518_182531_58534c.jsonl",
+    "report_dir": "D:/dev/saude/camera_calibrator/reports/saude1_real_gesture_session_20260518_182531_calibrated",
+    "calibration_id": "cal_20260518_155918_29d1b2",
+    "total_trials": 4,
+    "overall_accuracy": 0.0,
+    "level1_accuracy": 0.0,
+    "mean_latency_ms": 1974.0,
     "false_positives_per_minute": 0.0,
-    "raw_media_files": 0
+    "raw_media_files": 0,
+    "confusion_matrix": [
+      "expected/predicted,head_left,head_right,mouth_open,blink_long,no_response",
+      "head_left,0,0,0,0,1",
+      "head_right,0,0,0,0,1",
+      "mouth_open,0,0,0,0,1",
+      "blink_long,0,0,1,0,0",
+      "no_response,0,0,0,0,0"
+    ],
+    "findings": [
+      "Real-camera capture, feature logging, and nested feature reading are operational.",
+      "The current threshold profile did not classify the four prompted gestures correctly on this webcam run.",
+      "No raw fideo, photos, frames, or biometric identifiers were saved."
+    ]
   }
 }
