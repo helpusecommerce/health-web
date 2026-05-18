@@ -1,0 +1,22 @@
+{
+  "project": "HelpUS Health",
+  "domain": "health.helpusbr.com",
+  "stage": "Projeto Saude v0.2 smoke validated",
+  "calibration": {
+    "session_id": "cal_20260518_160327_d474e5",
+    "samples": 290,
+    "face_detected": 290,
+    "accepted": 290,
+    "quality_mean": 0.841,
+    "quality_min": 0.826,
+    "quality_max": 0.853,
+    "raw_media_files": 0
+  },
+  "next_actions": [
+    "Run gesture session",
+    "Validate head_left/head_right/mouth_open/blink_long",
+    "Generate report",
+    "Plan Railway API only when recurring metrics exist"
+  ],
+  "privacy": "No raw video, photos, frames or images are saved."
+}
