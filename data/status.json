@@ -1,7 +1,7 @@
 {
   "project": "HelpUS Health",
   "domain": "health.helpusbr.com",
-  "stage": "Projeto Saude v0.2 smoke validated",
+  "stage": "Projeto Saude v0.3 gesture report generated",
   "calibration": {
     "session_id": "cal_20260518_160327_d474e5",
     "samples": 290,
@@ -13,10 +13,23 @@
     "raw_media_files": 0
   },
   "next_actions": [
-    "Run gesture session",
-    "Validate head_left/head_right/mouth_open/blink_long",
-    "Generate report",
-    "Plan Railway API only when recurring metrics exist"
+    "Run real-camera gesture validation with user present",
+    "Validate head_left/head_right/mouth_open/blink_long on webcam",
+    "Generate aggregate-only report and compare with simulated baseline",
+    "Plan Railway API only when recurring consent-safe metrics exist"
   ],
-  "privacy": "No raw video, photos, frames or images are saved."
+  "privacy": "No raw video, photos, frames or images are saved. Dashboard uses aggregate JSON and CSV metrics only.",
+  "updated_at_utc": "2026-05-18T18:02:46Z",
+  "gesture_report": {
+    "mode": "simulated_no_camera",
+    "session_id": "s_20260518_175812_3322c3",
+    "session_path": "D:/dev/saude/camera_calibrator/data/sessions/saude1_demo_gesture_session.jsonl/s_20260518_175812_3322c3.jsonl",
+    "report_dir": "D:/dev/saude/camera_calibrator/reports/saude1_demo_gesture_session_20260518_175812",
+    "total_trials": 12,
+    "overall_accuracy": 1.0,
+    "level1_accuracy": 1.0,
+    "mean_latency_ms": 710.0,
+    "false_positives_per_minute": 0.0,
+    "raw_media_files": 0
+  }
 }
